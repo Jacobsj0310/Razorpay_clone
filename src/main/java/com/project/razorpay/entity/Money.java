@@ -1,0 +1,39 @@
+package com.project.razorpay.entity;
+
+
+import jakarta.persistence.Embeddable;
+
+@Embeddable
+/* EMBEDDED MEANS WE CAN USE THE TABLE IN THE CLASSES ONLY MEANS THIS CLASSES IS USABLE IN OTHER TABLES*/
+public class Money {
+
+    private int amountUnits;
+    private String currency;
+
+    private Money(int amountUnits, String currency) {
+        this.amountUnits = amountUnits;
+        this.currency = currency;
+    }
+
+    public static Money of(int amountUnits, String currency){
+        return new Money(amountUnits, currency);
+    }
+
+    private static Money inr(int amountUnits){
+        return new Money(amountUnits , "INR");
+    }
+
+    public Money add(Money other){
+        if(this.currency.equals(other.currency)){
+            throw new IllegalArgumentException("Can't add money with different currencies");
+        }
+        return new Money(this.amountUnits + other.amountUnits, this.currency);
+    }
+
+    public Money subtract(Money other){
+        if(this.currency.equals(other.currency)){
+            throw new IllegalArgumentException("Can't add money with different currencies");
+        }
+        return new Money(this.amountUnits + other.amountUnits, this.currency);
+    }
+}
