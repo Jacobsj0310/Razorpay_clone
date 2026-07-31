@@ -1,7 +1,7 @@
 package com.project.razorpay.merchant.entity;
 
 
-import com.project.razorpay.enums.UserRole;
+import com.project.razorpay.common.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.*;
 

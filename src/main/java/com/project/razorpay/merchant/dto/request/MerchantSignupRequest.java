@@ -1,6 +1,6 @@
 package com.project.razorpay.merchant.dto.request;
 
-import com.project.razorpay.enums.BusinessType;
+import com.project.razorpay.common.enums.BusinessType;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

@@ -1,8 +1,8 @@
 package com.project.razorpay.merchant.service.impl;
 
-import com.project.razorpay.enums.MerchantStatus;
-import com.project.razorpay.enums.UserRole;
-import com.project.razorpay.exception.DuplicateResourceException;
+import com.project.razorpay.common.enums.MerchantStatus;
+import com.project.razorpay.common.enums.UserRole;
+import com.project.razorpay.common.exception.DuplicateResourceException;
 import com.project.razorpay.merchant.dto.request.MerchantSignupRequest;
 import com.project.razorpay.merchant.dto.response.MerchantResponse;
 import com.project.razorpay.merchant.entity.AppUser;

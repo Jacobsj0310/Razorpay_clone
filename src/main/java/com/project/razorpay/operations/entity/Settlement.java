@@ -1,7 +1,7 @@
 package com.project.razorpay.operations.entity;
 
-import com.project.razorpay.entity.Money;
-import com.project.razorpay.enums.SettlementStatus;
+import com.project.razorpay.common.entity.Money;
+import com.project.razorpay.common.enums.SettlementStatus;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;

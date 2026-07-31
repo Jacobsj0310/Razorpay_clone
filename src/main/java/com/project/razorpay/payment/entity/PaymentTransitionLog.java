@@ -1,8 +1,8 @@
 package com.project.razorpay.payment.entity;
 
-import com.project.razorpay.enums.PaymentActor;
-import com.project.razorpay.enums.PaymentEvent;
-import com.project.razorpay.enums.PaymentStatus;
+import com.project.razorpay.common.enums.PaymentActor;
+import com.project.razorpay.common.enums.PaymentEvent;
+import com.project.razorpay.common.enums.PaymentStatus;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;

@@ -1,7 +1,7 @@
 package com.project.razorpay.merchant.entity;
 
-import com.project.razorpay.enums.BusinessType;
-import com.project.razorpay.enums.MerchantStatus;
+import com.project.razorpay.common.enums.BusinessType;
+import com.project.razorpay.common.enums.MerchantStatus;
 import jakarta.persistence.*;
 import lombok.*;
 

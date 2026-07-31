@@ -1,6 +1,6 @@
 package com.project.razorpay.operations.entity;
 
-import com.project.razorpay.enums.WebhookEventStatus;
+import com.project.razorpay.common.enums.WebhookEventStatus;
 import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;

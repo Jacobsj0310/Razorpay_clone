@@ -1,8 +1,8 @@
 package com.project.razorpay.payment.entity;
 
-import com.project.razorpay.entity.Money;
-import com.project.razorpay.enums.PaymentMethods;
-import com.project.razorpay.enums.PaymentStatus;
+import com.project.razorpay.common.entity.Money;
+import com.project.razorpay.common.enums.PaymentMethods;
+import com.project.razorpay.common.enums.PaymentStatus;
 import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;

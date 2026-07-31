@@ -1,4 +1,4 @@
-package com.project.razorpay.exception;
+package com.project.razorpay.common.exception;
 
 import lombok.Getter;
 

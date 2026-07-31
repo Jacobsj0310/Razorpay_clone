@@ -1,4 +1,4 @@
-package com.project.razorpay.entity;
+package com.project.razorpay.common.entity;
 
 
 import jakarta.persistence.Embeddable;

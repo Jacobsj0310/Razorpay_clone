@@ -1,8 +1,7 @@
-package com.project.razorpay.exception;
+package com.project.razorpay.common.exception;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.validation.FieldError;
-import tools.jackson.databind.annotation.JsonAppend;
 
 import java.time.LocalDateTime;
 import java.util.List;

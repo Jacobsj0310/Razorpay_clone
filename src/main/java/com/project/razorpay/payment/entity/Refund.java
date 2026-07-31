@@ -1,14 +1,13 @@
 package com.project.razorpay.payment.entity;
 
-import com.project.razorpay.entity.Money;
-import com.project.razorpay.enums.RefundStatus;
+import com.project.razorpay.common.entity.Money;
+import com.project.razorpay.common.enums.RefundStatus;
 import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
 import java.time.LocalDateTime;
 import java.util.Map;
-import java.util.Scanner;
 import java.util.UUID;
 
 @Entity

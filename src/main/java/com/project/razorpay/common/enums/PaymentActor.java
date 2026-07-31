@@ -1,4 +1,4 @@
-package com.project.razorpay.enums;
+package com.project.razorpay.common.enums;
 
 public enum PaymentActor {
     CUSTOMER,
