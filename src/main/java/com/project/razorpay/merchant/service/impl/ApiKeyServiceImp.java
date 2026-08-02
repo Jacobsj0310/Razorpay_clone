@@ -15,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -64,10 +65,29 @@ public class ApiKeyServiceImp implements ApiKeyService {
     @Override
     @Transactional
     public void revoke(UUID merchantId, UUID keyId) {
-        ApiKey key = apiKeyRepository.findByKeyId(String.valueOf(keyId))
+        ApiKey key = apiKeyRepository.findById(keyId)
                 .filter(k -> k.getMerchant().getId().equals(merchantId))
-                .orElseThrow(()-> new ResourceNotFoundException("Apikey",keyId));
+                .orElseThrow(() -> new ResourceNotFoundException("ApiKey", keyId));
 
         key.setEnabled(false);
     }
+
+    @Override
+    @Transactional
+    public ApiKeyCreateResponse rotate(UUID merchantId, UUID keyId) {
+        ApiKey apiKey = apiKeyRepository.findById(keyId)
+                .filter(k -> k.getMerchant().getId().equals(merchantId))
+                .orElseThrow(() -> new ResourceNotFoundException("ApiKey", keyId));
+
+        String newRawSecret = RandomizerUtil.randomBase64(40);
+        apiKey.setPreviousKeySecretHash(apiKey.getKeySecretHash());
+        apiKey.setKeySecretHash(newRawSecret);
+        apiKey.setRotatedAt(LocalDateTime.now());
+        apiKey.setGracePeriodExpiresAt(LocalDateTime.now().plusHours(24));
+        apiKey = apiKeyRepository.save(apiKey);
+
+        return new ApiKeyCreateResponse(apiKey.getId(), apiKey.getKeyId(), newRawSecret , apiKey.getEnvironment());
+    }
+
+
 }

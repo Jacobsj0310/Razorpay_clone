@@ -15,4 +15,6 @@ public interface ApiKeyService  {
 
     void revoke(UUID merchantId, UUID keyId);
 
+    ApiKeyCreateResponse rotate(UUID merchantId, UUID keyId);
+
 }

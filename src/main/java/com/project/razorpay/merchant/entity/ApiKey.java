@@ -42,7 +42,7 @@ public class ApiKey {
     private boolean enabled = true;
 
 
-    private java.time.LocalDateTime lastUsedAt;
-    private java.time.LocalDateTime rotatedAt;
-    private java.time.LocalDateTime gracePeriodExpiresAt;
+    private LocalDateTime lastUsedAt;
+    private LocalDateTime rotatedAt;
+    private LocalDateTime gracePeriodExpiresAt;
 }
