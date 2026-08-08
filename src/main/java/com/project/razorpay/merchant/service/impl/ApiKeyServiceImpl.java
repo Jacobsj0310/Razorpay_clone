@@ -10,10 +10,11 @@ import com.project.razorpay.merchant.entity.Merchant;
 import com.project.razorpay.merchant.repository.ApiKeyRepository;
 import com.project.razorpay.merchant.repository.MerchantRepository;
 import com.project.razorpay.merchant.service.ApiKeyService;
-import jakarta.transaction.Transactional;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -22,7 +23,8 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class ApiKeyServiceImp implements ApiKeyService {
+@Transactional(readOnly = true)
+public class ApiKeyServiceImpl implements ApiKeyService {
 
     private final MerchantRepository merchantRepository;
     private final ApiKeyRepository apiKeyRepository;
